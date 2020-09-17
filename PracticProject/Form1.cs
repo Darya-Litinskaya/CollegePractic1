@@ -28,7 +28,8 @@ namespace PracticProject
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            dataGridView1.Focus();
+            SendKeys.Send("{DEL}");
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -723,17 +724,314 @@ namespace PracticProject
 
         private void btn_add_Click(object sender, EventArgs e)
         {
-             
+            switch (TabN)
+            {
+                case 1:
+                    try
+                    {
+                        DataRow nRow = информационная_система_автосалонаDataSet.Автомобиль.NewRow();
+                        nRow[0] = textBox1.Text;
+                        nRow[1] = textBox2.Text;
+                        nRow[2] = textBox3.Text;
+                        nRow[3] = textBox4.Text;
+                        nRow[4] = textBox5.Text;
+                        информационная_система_автосалонаDataSet.Автомобиль.Rows.Add(nRow);
+                        автомобильTableAdapter.Update(информационная_система_автосалонаDataSet.Автомобиль);
+                        информационная_система_автосалонаDataSet.Автомобиль.AcceptChanges();
+                        dataGridView1.Refresh();
+                    }
+                    catch (System.Data.SqlClient.SqlException)
+                    {
+                        MessageBox.Show("Несовпадение с другими таблицами!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        информационная_система_автосалонаDataSet.RejectChanges();
+                    }
+                    catch (System.ArgumentException)
+                    {
+                        MessageBox.Show("Неправильный формат ввода!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        информационная_система_автосалонаDataSet.RejectChanges();
+                    }
+                    break;
+
+                case 2:
+                    try
+                    {
+                        DataRow nRow = информационная_система_автосалонаDataSet.Акции.NewRow();
+                        nRow[0] = textBox1.Text;
+                        nRow[1] = textBox2.Text;
+                        nRow[2] = textBox3.Text;
+                        nRow[3] = textBox4.Text;
+                        nRow[4] = textBox5.Text;
+                        информационная_система_автосалонаDataSet.Акции.Rows.Add(nRow);
+                        акцииTableAdapter.Update(информационная_система_автосалонаDataSet.Акции);
+                        информационная_система_автосалонаDataSet.Акции.AcceptChanges();
+                        dataGridView1.Refresh();
+                    }
+                    catch (System.Data.SqlClient.SqlException)
+                    {
+                        MessageBox.Show("Несовпадение с другими таблицами!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        информационная_система_автосалонаDataSet.RejectChanges();
+                    }
+                    catch (System.ArgumentException)
+                    {
+                        MessageBox.Show("Неправильный формат ввода!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        информационная_система_автосалонаDataSet.RejectChanges();
+                    }
+                    break;
+
+                case 3:
+                    try
+                    {
+                        DataRow nRow = информационная_система_автосалонаDataSet.Должность.NewRow();
+                        nRow[0] = textBox1.Text;
+                        nRow[1] = textBox2.Text;
+                        nRow[2] = textBox3.Text;
+                        nRow[3] = textBox4.Text;
+                        nRow[4] = textBox5.Text;
+                        информационная_система_автосалонаDataSet.Должность.Rows.Add(nRow);
+                        должностьTableAdapter.Update(информационная_система_автосалонаDataSet.Должность);
+                        информационная_система_автосалонаDataSet.Должность.AcceptChanges();
+                        dataGridView1.Refresh();
+                    }
+                    catch (System.Data.SqlClient.SqlException)
+                    {
+                        MessageBox.Show("Несовпадение с другими таблицами!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        информационная_система_автосалонаDataSet.RejectChanges();
+                    }
+                    catch (System.ArgumentException)
+                    {
+                        MessageBox.Show("Неправильный формат ввода!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        информационная_система_автосалонаDataSet.RejectChanges();
+                    }
+                    break;
+
+                case 4:
+                    try
+                    {
+                        DataRow nRow = информационная_система_автосалонаDataSet.Комплектация.NewRow();
+                        nRow[0] = textBox1.Text;
+                        nRow[1] = textBox2.Text;
+                        nRow[2] = textBox3.Text;
+                        nRow[3] = textBox4.Text;
+                        nRow[4] = textBox5.Text;
+                        nRow[5] = textBox6.Text;
+                        nRow[6] = textBox7.Text;
+                        nRow[7] = textBox8.Text;
+                        nRow[8] = textBox9.Text;
+                        nRow[9] = textBox10.Text;
+                        nRow[10] = textBox11.Text;
+                        nRow[11] = textBox12.Text;
+                        nRow[12] = textBox13.Text;
+                        nRow[13] = textBox14.Text;
+                        nRow[14] = textBox15.Text;
+                        nRow[15] = textBox16.Text;
+                        nRow[16] = textBox17.Text;
+                        nRow[17] = textBox18.Text;
+                        nRow[18] = textBox19.Text;
+                        nRow[19] = textBox20.Text;
+                        информационная_система_автосалонаDataSet.Комплектация.Rows.Add(nRow);
+                        комплектацияTableAdapter.Update(информационная_система_автосалонаDataSet.Комплектация);
+                        информационная_система_автосалонаDataSet.Комплектация.AcceptChanges();
+                        dataGridView1.Refresh();
+                    }
+                    catch (System.Data.SqlClient.SqlException)
+                    {
+                        MessageBox.Show("Несовпадение с другими таблицами!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        информационная_система_автосалонаDataSet.RejectChanges();
+                    }
+                    catch (System.ArgumentException)
+                    {
+                        MessageBox.Show("Неправильный формат ввода!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        информационная_система_автосалонаDataSet.RejectChanges();
+                    }
+                    break;
+
+                case 5:
+                    try
+                    {
+                        DataRow nRow = информационная_система_автосалонаDataSet.Модель.NewRow();
+                        nRow[0] = textBox1.Text;
+                        nRow[1] = textBox2.Text;
+                        nRow[2] = textBox3.Text;
+                        nRow[3] = textBox4.Text;
+                        nRow[4] = textBox5.Text;
+                        nRow[5] = textBox6.Text;
+                        nRow[6] = textBox7.Text;
+                        nRow[7] = textBox8.Text;
+                        nRow[8] = textBox9.Text;
+                        nRow[9] = textBox10.Text;
+                        nRow[10] = textBox11.Text;
+                        nRow[11] = textBox12.Text;
+                        nRow[12] = textBox13.Text;
+                        nRow[13] = textBox14.Text;
+                        nRow[14] = textBox15.Text;
+                        nRow[15] = textBox16.Text;
+                        nRow[16] = textBox17.Text;
+                        nRow[17] = textBox18.Text;
+                        nRow[18] = textBox19.Text;
+                        nRow[19] = textBox20.Text;
+                        информационная_система_автосалонаDataSet.Модель.Rows.Add(nRow);
+                        модельTableAdapter.Update(информационная_система_автосалонаDataSet.Модель);
+                        информационная_система_автосалонаDataSet.Модель.AcceptChanges();
+                        dataGridView1.Refresh();
+                    }
+                    catch (System.Data.SqlClient.SqlException)
+                    {
+                        MessageBox.Show("Несовпадение с другими таблицами!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        информационная_система_автосалонаDataSet.RejectChanges();
+                    }
+                    catch (System.ArgumentException)
+                    {
+                        MessageBox.Show("Неправильный формат ввода!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        информационная_система_автосалонаDataSet.RejectChanges();
+                    }
+                    break;
+
+                case 6:
+                    try
+                    {
+                        DataRow nRow = информационная_система_автосалонаDataSet.Паспорт.NewRow();
+                        nRow[0] = textBox1.Text;
+                        nRow[1] = textBox2.Text;
+                        nRow[2] = textBox3.Text;
+                        nRow[3] = textBox4.Text;
+                        nRow[4] = textBox5.Text;
+                        nRow[5] = textBox6.Text;
+                        информационная_система_автосалонаDataSet.Паспорт.Rows.Add(nRow);
+                        паспортTableAdapter.Update(информационная_система_автосалонаDataSet.Паспорт);
+                        информационная_система_автосалонаDataSet.Паспорт.AcceptChanges();
+                        dataGridView1.Refresh();
+                    }
+                    catch (System.Data.SqlClient.SqlException)
+                    {
+                        MessageBox.Show("Несовпадение с другими таблицами!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        информационная_система_автосалонаDataSet.RejectChanges();
+                    }
+                    catch (System.ArgumentException)
+                    {
+                        MessageBox.Show("Неправильный формат ввода!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        информационная_система_автосалонаDataSet.RejectChanges();
+                    }
+                    break;
+
+                case 7:
+                    try
+                    {
+                        DataRow nRow = информационная_система_автосалонаDataSet.Салон.NewRow();
+                        nRow[0] = textBox1.Text;
+                        nRow[1] = textBox2.Text;
+                        nRow[2] = textBox3.Text;
+                        информационная_система_автосалонаDataSet.Салон.Rows.Add(nRow);
+                        салонTableAdapter.Update(информационная_система_автосалонаDataSet.Салон);
+                        информационная_система_автосалонаDataSet.Салон.AcceptChanges();
+                        dataGridView1.Refresh();
+                    }
+                    catch (System.Data.SqlClient.SqlException)
+                    {
+                        MessageBox.Show("Несовпадение с другими таблицами!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        информационная_система_автосалонаDataSet.RejectChanges();
+                    }
+                    catch (System.ArgumentException)
+                    {
+                        MessageBox.Show("Неправильный формат ввода!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        информационная_система_автосалонаDataSet.RejectChanges();
+                    }
+                    break;
+
+                case 8:
+                    try
+                    {
+                        DataRow nRow = информационная_система_автосалонаDataSet.Сделка.NewRow();
+                        nRow[0] = textBox1.Text;
+                        nRow[1] = textBox2.Text;
+                        nRow[2] = textBox3.Text;
+                        nRow[3] = textBox4.Text;
+                        nRow[4] = textBox5.Text;
+                        nRow[5] = textBox6.Text;
+                        nRow[6] = textBox7.Text;
+                        nRow[7] = textBox8.Text;
+                        информационная_система_автосалонаDataSet.Сделка.Rows.Add(nRow);
+                        сделкаTableAdapter.Update(информационная_система_автосалонаDataSet.Сделка);
+                        информационная_система_автосалонаDataSet.Сделка.AcceptChanges();
+                        dataGridView1.Refresh();
+                    }
+                    catch (System.Data.SqlClient.SqlException)
+                    {
+                        MessageBox.Show("Несовпадение с другими таблицами!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        информационная_система_автосалонаDataSet.RejectChanges();
+                    }
+                    catch (System.ArgumentException)
+                    {
+                        MessageBox.Show("Неправильный формат ввода!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        информационная_система_автосалонаDataSet.RejectChanges();
+                    }
+                    break;
+
+                case 9:
+                    try
+                    {
+                        DataRow nRow = информационная_система_автосалонаDataSet.Сотрудник.NewRow();
+                        nRow[0] = textBox1.Text;
+                        nRow[1] = textBox2.Text;
+                        nRow[2] = textBox3.Text;
+                        nRow[3] = textBox4.Text;
+                        nRow[4] = textBox5.Text;
+                        информационная_система_автосалонаDataSet.Сотрудник.Rows.Add(nRow);
+                        сотрудникTableAdapter.Update(информационная_система_автосалонаDataSet.Сотрудник);
+                        информационная_система_автосалонаDataSet.Сотрудник.AcceptChanges();
+                        dataGridView1.Refresh();
+                    }
+                    catch (System.Data.SqlClient.SqlException)
+                    {
+                        MessageBox.Show("Несовпадение с другими таблицами!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        информационная_система_автосалонаDataSet.RejectChanges();
+                    }
+                    catch (System.ArgumentException)
+                    {
+                        MessageBox.Show("Неправильный формат ввода!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        информационная_система_автосалонаDataSet.RejectChanges();
+                    }
+                    break;
+
+                case 10:
+                    try
+                    {
+                        DataRow nRow = информационная_система_автосалонаDataSet.Цвет.NewRow();
+                        nRow[0] = textBox1.Text;
+                        nRow[1] = textBox2.Text;
+                        nRow[2] = textBox3.Text;
+                        nRow[3] = textBox4.Text;
+                        nRow[4] = textBox5.Text;
+                        информационная_система_автосалонаDataSet.Цвет.Rows.Add(nRow);
+                        цветTableAdapter.Update(информационная_система_автосалонаDataSet.Цвет);
+                        информационная_система_автосалонаDataSet.Цвет.AcceptChanges();
+                        dataGridView1.Refresh();
+                    }
+                    catch (System.Data.SqlClient.SqlException)
+                    {
+                        MessageBox.Show("Несовпадение с другими таблицами!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        информационная_система_автосалонаDataSet.RejectChanges();
+                    }
+                    catch (System.ArgumentException)
+                    {
+                        MessageBox.Show("Неправильный формат ввода!", "Ошибка!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        информационная_система_автосалонаDataSet.RejectChanges();
+                    }
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void dataGridView1_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
         {
-
+            DialogResult dr = MessageBox.Show("Удалить запись?", "Удаление", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (dr == DialogResult.Cancel)
+                e.Cancel = true;
         }
 
         private void btn_edit_Click(object sender, EventArgs e)
         {
-            
+
         }
     }
 }
